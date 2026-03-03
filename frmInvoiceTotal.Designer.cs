@@ -32,10 +32,12 @@
             txtDiscountPercent = new TextBox();
             txtDiscountAmount = new TextBox();
             txtTotal = new TextBox();
+            txtCustomerType = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
+            lblCustomerType = new Label();
             btnCalculate = new Button();
             btnExit = new Button();
             SuspendLayout();
@@ -47,10 +49,17 @@
             txtSubtotal.Size = new Size(138, 27);
             txtSubtotal.TabIndex = 1;
             txtSubtotal.TextChanged += textBox1_TextChanged;
-            // 
-            // txtDiscountPercent
-            // 
-            txtDiscountPercent.Location = new Point(187, 106);
+            //
+			// txtCustomerType
+            //
+			txtCustomerType.Location = new Point(187, 20);
+			txtCustomerType.Name = "txtCustomerType";
+			txtCustomerType.Size = new Size(138, 27);
+			txtCustomerType.TabIndex = 0;
+			// 
+			// txtDiscountPercent
+			// 
+			txtDiscountPercent.Location = new Point(187, 106);
             txtDiscountPercent.Name = "txtDiscountPercent";
             txtDiscountPercent.ReadOnly = true;
             txtDiscountPercent.Size = new Size(138, 27);
@@ -117,16 +126,25 @@
             label4.TabIndex = 7;
             label4.Text = "Total:";
             label4.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // btnCalculate
-            // 
-            btnCalculate.BackColor = SystemColors.ControlLight;
+			//
+			// lblCustomerType
+            //
+			lblCustomerType.AutoSize = true;
+			lblCustomerType.Location = new Point(48, 23);
+			lblCustomerType.Name = "lblCustomerType";
+			lblCustomerType.Size = new Size(150, 20);
+			lblCustomerType.Text = "Customer Type (R, C, T):";
+			// 
+			// btnCalculate
+			// 
+			btnCalculate.BackColor = SystemColors.ControlLight;
             btnCalculate.Location = new Point(113, 262);
             btnCalculate.Name = "btnCalculate";
             btnCalculate.Size = new Size(94, 29);
             btnCalculate.TabIndex = 2;
             btnCalculate.Text = "&Calculate";
             btnCalculate.UseVisualStyleBackColor = false;
+            btnCalculate.Click += btnCalculate_Click;
             // 
             // btnExit
             // 
@@ -151,10 +169,12 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(lblCustomerType);
             Controls.Add(label1);
             Controls.Add(txtTotal);
             Controls.Add(txtDiscountAmount);
             Controls.Add(txtDiscountPercent);
+            Controls.Add(txtCustomerType);
             Controls.Add(txtSubtotal);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -173,7 +193,9 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private Label lblCustomerType;
         private Button btnCalculate;
         private Button btnExit;
+        private TextBox txtCustomerType;
     }
 }
